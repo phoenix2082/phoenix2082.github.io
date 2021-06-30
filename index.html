@@ -10,11 +10,105 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Hello World
+        Play with Scala       
       </h1>
       <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
+      	day-0	
       </p>
+      <div class="content">
+      	Day 01
+
+Okay so I am learning Scala. I have background in web apps, so I thought best way to learn will be build web app using Play Framework.
+
+But what type of app to build. Todo apps are boring though they lets you grasp basic pretty fast.
+
+What should I build.
+
+I think a Twitter like social network would be great way to learn about Scala. Also twitter also uses Scala in backend.
+
+Getting started page of play-framework says bootstrapping hello world project is very easy.
+
+Create a directory.
+
+$ mkdir me-social
+$ cd me-social
+
+Run following command to create a play project.
+
+$ sbt new playframework/play-scala-seed.g8
+
+[info] welcome to sbt 1.3.13 (AdoptOpenJDK Java 14.0.2)
+[info] set current project to me-social (in build file:~/me-social/)
+[info] set current project to me-social (in build file:~/me-social/)
+
+This template generates a Play Scala project 
+
+name [play-scala-seed]: msocial
+organization [com.example]: org.mesocial
+
+Template applied in ~/me-social/./msocial
+
+And it is downloading  lots of play and dependencies.
+
+And it is still downloading.
+
+Finally, I see the message:
+
+--- (Running the application, auto-reloading is enabled) ---
+
+[info] p.c.s.AkkaHttpServer - Listening for HTTP on /[0:0:0:0:0:0:0:0]:9000
+
+(Server started, use Enter to stop and go back to the console...)
+ 
+Oops looks like it using IPV6. Any way lets access using:
+
+http://localhost:9000
+
+And waiting…..
+
+I see logs rolling:
+
+info] compiling 7 Scala sources and 1 Java source to ~/me-social/msocial/target/scala-2.13/classes ...
+https://repo1.maven.org/maven2/org/scala-sbt/compiler-bridge_2.13/1.5.3/compiler-bridge_2.13-1.5.3.pom
+  100.0% [##########] 2.7 KiB (2.2 KiB / s)
+https://repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.5.3/compiler-interface-1.5.3.pom
+  100.0% [##########] 2.9 KiB (10.3 KiB / s)
+https://repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.5.3/compiler-interface-1.5.3.jar
+  100.0% [##########] 109.6 KiB (30.3 KiB / s)
+https://repo1.maven.org/maven2/org/scala-sbt/compiler-bridge_2.13/1.5.3/compiler-bridge_2.13-1.5.3-sources.jar
+  100.0% [##########] 51.0 KiB (13.6 KiB / s)
+[info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.6. Compiling...
+[info]   Compilation completed in 7.917s.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:~/Coursier/v1/https/repo1.maven.org/maven2/com/google/inject/guice/4.2.3/guice-4.2.3.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2021-06-30 15:54:14 INFO  play.api.http.EnabledFilters  Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+2021-06-30 15:54:14 INFO  play.api.Play  Application started (Dev) (no global state)
+
+
+But I see Welcome to Play!. 
+
+That’s great. It means. It Works.
+
+Lets press enter at console 
+
+2021-06-30 16:03:25 INFO  p.a.i.l.c.CoordinatedShutdownSupport  Starting synchronous coordinated shutdown with ServerStoppedReason reason and 35000 milliseconds timeout
+2021-06-30 16:03:25 INFO  play.core.server.AkkaHttpServer  Stopping Akka HTTP server...
+2021-06-30 16:03:25 INFO  play.core.server.AkkaHttpServer  Terminating server binding for /[0:0:0:0:0:0:0:0]:9000
+2021-06-30 16:03:25 INFO  play.core.server.AkkaHttpServer  Running provided shutdown stop hooks
+
+
+Yep. The application stops.
+
+
+But We need to change [0:0:0:0:0:0:0:0]:9000 to use IPv4 address.
+      </div>
     </div>
   </section>
   </body>
